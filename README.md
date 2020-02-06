@@ -30,8 +30,10 @@ pip install -r requirements.txt
 ## Run
 
 ### Using Jupyter Notebook
-In the Jupyter Notebook version: `GenerateSamples.ipynb` you can specify the dimension, number of samples and run the code to generate an output file.
+In the Jupyter Notebook version: `GenerateSamples.ipynb` you can specify the dimension, number of pair of samples to be created and run the code to generate an output file.
 
 ### Using Python Script
-With the Python script: `generate_samples.py` you can run it passing the arguments dimension and number os samples, respectively, inline as follows:
+With the Python script: `generate_samples.py` you can run it passing the arguments dimension and number of pair of samples to be created, respectively, inline as follows:
 `python3.7 generate_samples.py 3 10`
+
+**Note: All the combinations with the samples will be tested. So, if you choose 100 pairs of samples, 10000 combinations will be validated, in both ordenation (AB and BA).**
