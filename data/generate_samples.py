@@ -5,11 +5,10 @@
 
 # %%
 import csv
-import sys
 import numpy as np
 
-dim = int(sys.argv[1]) # space dimension 3-12
-total_pairs = int(sys.argv[2]) #total of pairs of vectors to be generated
+dim = 3 # space dimension
+total_pairs = 100 #total of pairs of vectors to be generated
 
 # %% [markdown]
 # ## Generating random samples
@@ -84,4 +83,5 @@ with open(filename, mode='w') as output_file:
 
     for vec1_idx in range(total_pairs):
         for vec2_idx in range(total_pairs):
-            output_writer.writerow([vec1_samples[vec1_idx],vec2_samples[vec2_idx],validation_vec1_vs_vec2[vec1_idx][vec2_idx],validation_vec2_vs_vec1[vec2_idx][vec1_idx]])
+            output_writer.writerow([np.array2string(vec1_samples[vec1_idx], separator=', '),np.array2string(vec2_samples[vec2_idx], separator=', '),validation_vec1_vs_vec2[vec1_idx][vec2_idx],validation_vec2_vs_vec1[vec2_idx][vec1_idx]])
+
