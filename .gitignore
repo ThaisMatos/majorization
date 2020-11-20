@@ -1,4 +1,5 @@
 venv/
 .vscode/
+ml_models/tests/
 
 *.csv
