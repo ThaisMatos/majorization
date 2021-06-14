@@ -29,11 +29,20 @@ pip install -r requirements.txt
 
 ## Run
 
-### Using Jupyter Notebook
-In the Jupyter Notebook version: `GenerateSamples.ipynb` you can specify the dimension, number of pair of samples to be created and run the code to generate an output file.
+### Generate Samples
+In the Jupyter Notebook file: `data/GenerateSamples.ipynb` you can specify the dimension, number of pair of samples to be created and run the code to generate an output file.
 
-### Using Python Script
-With the Python script: `generate_samples.py` you can run it passing the arguments dimension and number of pair of samples to be created, respectively, inline as follows:
-`python3.7 generate_samples.py 3 10`
+### Train a Sequential model
+After generate the samples by the previous step, you can use the Jupyter Notebook file: `ml_models/SequentialModel.ipynb` to train a Sequential Model that will be responsible to predict, given a pair of vectors A and B, if the first one majorates the second one. For the training, you need to specify the dimension, number of samples (total), number of training epochs and the optimizer name to update the weights of the model.
+- The Jupyter Notebook `runner/run_sequential_training.ipynb` contains an example of how to trigger the training of multiple sequential models with different parameters.
+
+### Self-Catalysis
+Using a trained model and a set of samples, you can use the Jupyter Notebook `runner/self_catalysis.ipynb` to make self catalysis and check if the same model trained to predict majorization can predict self catalysis. In order to check the self catalysis performance, you need to specify the dimension and optimizer name.
+- The Jupyter Notebook `runner/run_self_catlysis.ipynb` contains an example of how to trigger the self catalysis check of multiple dimensions and optimizers.
+
+### Self-Self-Catalysis
+Using a trained model and a set of samples, you can use the Jupyter Notebook `runner/self_self_catalysis.ipynb` to make self self catalysis and check if the same model trained to predict majorization can predict self self catalysis. In order to check the self self catalysis performance, you need to specify the dimension, optimizer name and set the prediction flag (True - use a sequential model to predict the self catalysis output / False - use the original formula to get the self catalysis output)
+- The Jupyter Notebook `runner/run_self_self_catlysis.ipynb` contains an example of how to trigger the self self catalysis check of multiple dimensions and optimizers.
+
 
 **Note: All the combinations with the samples will be tested. So, if you choose 100 pairs of samples, 10000 combinations will be validated, in both ordenation (AB and BA).**
