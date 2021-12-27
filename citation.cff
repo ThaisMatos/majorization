@@ -1,0 +1,11 @@
+cff-version: 1.0.0
+message: "If you use the ML models listed in this repository, please cite it as below."
+authors:
+  - family-names: Matos Acacio
+    given-names: Thais
+    email: thaismatosacacio@hotmail.com
+  - family-names: Duarte
+    given-names: Cristhiano
+    email: cristhianoduarte@gmail.com
+title: "Majorization ML Algorithms"
+date-released: 2021-12-27
